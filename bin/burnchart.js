@@ -8,6 +8,8 @@ var Args = require('argparse').ArgumentParser,
     pakg = require('../package.json'),
     fs   = require('fs');
 
+
+
 var parser = new Args({
   version: pakg.version
 });
@@ -16,7 +18,7 @@ parser.addArgument(
   [ '-p', '--port' ],
   {
     'help': 'Specify port number to start app on',
-    'defaultValue': 8080,
+    'defaultValue': process.env.PORT || 8081,
     'type': 'int'
   }
 );
